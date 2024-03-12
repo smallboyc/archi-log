@@ -1,0 +1,8 @@
+tr {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+td {
+  font-size: x-large;
+}
