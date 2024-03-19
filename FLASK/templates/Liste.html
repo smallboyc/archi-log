@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Liste des jeux</title>
+  </head>
+  <body>
+    <h1>Hello la liste de jeu</h1>
+    <table>
+      <tr>
+        <th>Nom du jeu</th>
+        <th>Prix : $</th>
+        <th>Description du jeu</th>
+      </tr>
+      {% for game in games %}
+      <tr>
+        <td>{{game.name}}</td>
+        <td>{{game.price}} $</td>
+        <td>{{game.desc}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <div class="btn">
+      <a href="../saisie">Créer un autre jeu</a>
+    </div>
+  </body>
+</html>

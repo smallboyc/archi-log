@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-     return render_template("test.html", el = random_number)
+     return render_template("test.html")
 
 @app.route("/result", methods=['POST'])
 def display():
@@ -20,7 +20,6 @@ def display():
 # @app.route("/appli")
 # def appliPage():
 #     return "<p>Bienvenue dans mon application</p>"
-
 
 #LE JEU DU PLUS OU MOINS
 
@@ -42,3 +41,16 @@ def CheckGameResponse():
 
 
 
+#CREATION DE NOS JEUX
+
+games = []
+
+@app.route("/saisie")
+def displayGameCreationForm():
+     return render_template("Saisie.html")
+
+@app.route("/ajout", methods=['POST'])
+def displayGameList():
+   game = {"name": request.form["name"], "price" : request.form["price"], "desc": request.form["desc"]}
+   games.append(game)
+   return render_template("Liste.html", games = games)
