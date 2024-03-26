@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Edit</title>
+  </head>
+  <body>
+    <section>
+      <h1>Formulaire de modification du jeu</h1>
+      <p>Modifiez votre jeu numéro {{edit_id}} :</p>
+      <form action="/edit" method="post">
+        <div class="element">
+          <label for="name">Nom du jeu :</label>
+          <input type="text" name="name" id="name" required />
+        </div>
+        <div class="element">
+          <label for="price">Prix du jeu :</label>
+          <input type="number" name="price" id="price" required />
+        </div>
+        <div class="element">
+          <label for="desc">Description :</label>
+          <textarea id="desc" name="desc" rows="5" cols="33"> </textarea>
+        </div>
+        <div class="element">
+          <input
+            type="hidden"
+            name="name_id"
+            id="name_id"
+            required
+            value="{{edit_id}}"
+          />
+        </div>
+        <input class="btn" type="submit" value="Modifier le jeu" />
+      </form>
+    </section>
+  </body>
+</html>

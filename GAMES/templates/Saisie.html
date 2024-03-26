@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Formulaire de saisie de jeu</title>
+  </head>
+  <body>
+    <section>
+      <h1>Formulaire de saisie de jeu</h1>
+      <p>Ajoutez votre AAA :</p>
+      <form action="/ajout" method="post">
+        <div class="element">
+          <label for="name">Nom du jeu :</label>
+          <input type="text" name="name" id="name" required />
+        </div>
+        <div class="element">
+          <label for="price">Prix du jeu :</label>
+          <input type="number" name="price" id="price" required />
+        </div>
+        <div class="element">
+          <label for="desc">Description :</label>
+          <textarea id="desc" name="desc" rows="5" cols="33"> </textarea>
+        </div>
+
+        <input class="btn" type="submit" value="Créer ton AAA !" />
+      </form>
+    </section>
+  </body>
+</html>
